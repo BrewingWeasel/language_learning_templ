@@ -5,8 +5,8 @@
 <div id="sentence"></div>
 
 <script>
-  const sentence = document.getElementById("sentence");
-  const values = "{{morph_details}}".split("@@");
+  var sentence = document.getElementById("sentence");
+  var values = "{{morph_details}}".split("@@");
 
   for (var i = 0; i < values.length; i++) {
     const word_vals = values[i];
@@ -44,4 +44,6 @@
   <div id="morph_info"></div>
 </div>
 
+<div id="definition">
 {{Back}}
+</div>

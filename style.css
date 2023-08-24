@@ -15,6 +15,19 @@
   display: none;
 }
 
+#definition {
+  background-color: #5b6078;
+  color: #f4dbd6;
+  padding: 6px;
+  margin: 13px 89px;
+  border-radius: 20px;
+}
+
+#definition h2 {
+  color: #c6a0f6;
+  padding: 0px;
+}
+
 #lemma {
   color: #a6da95;
 }

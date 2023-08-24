@@ -1,0 +1,47 @@
+{{FrontSide}}
+
+<hr id=answer>
+
+<div id="sentence"></div>
+
+<script>
+  const sentence = document.getElementById("sentence");
+  const values = "{{morph_details}}".split("@@");
+
+  for (var i = 0; i < values.length; i++) {
+    const word_vals = values[i];
+    const individual_values = word_vals.split("``");
+    const word = document.createElement("span");
+    const node = document.createTextNode(individual_values[0]);
+
+    word.appendChild(node);
+    sentence.appendChild(word);
+
+    if (individual_values[1] === "2") {
+      word.setAttribute("data-lemma", individual_values[2]);
+      word.setAttribute("data-morph", individual_values[3]);
+      word.setAttribute("class", individual_values[4]);
+      word.addEventListener("click", createNewValues);
+    }
+  }
+
+  var cur_word = document.querySelector("#curword");
+  var cur_showing = document.querySelector("#values");
+  var cur_lemma = document.querySelector("#lemma");
+  var cur_morph = document.querySelector("#morph_info");
+
+  function createNewValues() {
+    curword.style.display = "block";
+    cur_showing.innerText = this.innerText;
+    cur_lemma.innerText = this.dataset.lemma;
+    cur_morph.innerText = this.dataset.morph;
+  }
+</script>
+
+<div id="curword">
+  <div id="values"></div>
+  <div id="lemma"></div>
+  <div id="morph_info"></div>
+</div>
+
+{{Back}}
